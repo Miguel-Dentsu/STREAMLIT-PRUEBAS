@@ -45,3 +45,9 @@ if st.button("Listo"):
         )
     else:
         st.error("Por favor, añada al menos una categoría y un presupuesto antes de generar el gráfico.")
+
+# Botón para resetear los datos
+if st.button("Resetear"):
+    st.session_state.categorias = []
+    st.session_state.presupuestos = []
+    st.success("El programa se ha reseteado. Ahora puede empezar de nuevo.")
