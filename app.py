@@ -18,11 +18,9 @@ presupuesto = st.number_input("Ingrese el presupuesto en euros:", min_value=0.0,
 # Botón para añadir la categoría y el presupuesto
 if st.button("Añadir Categoría"):
     if categoria and presupuesto > 0:
-        # Multiplicar el presupuesto por 0,99 antes de guardarlo
-        presupuesto_ajustado = presupuesto * 0,99
         st.session_state.categorias.append(categoria)
-        st.session_state.presupuestos.append(presupuesto_ajustado)
-        st.success(f"Categoría '{categoria}' con un presupuesto de {presupuesto_ajustado:.2f}€ añadida.")
+        st.session_state.presupuestos.append(presupuesto)
+        st.success(f"Categoría '{categoria}' con un presupuesto de {presupuesto}€ añadida.")
     else:
         st.error("Por favor, ingrese una categoría y un presupuesto válido.")
 
